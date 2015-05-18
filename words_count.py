@@ -3,22 +3,22 @@
 
 import re
 
-file_path = raw_input("ÇëÊäÈëÎÄ¼þÂ·¾¶£º")		#µ¼ÈëÒª´¦ÀíµÄÎÄ¼þ
+file_one = raw_input("è¯·è¾“å…¥æ–‡ä»¶è·¯å¾„ï¼š")		#å¯¼å…¥è¦å¤„ç†çš„æ–‡ä»¶
 
-with open(file_path,"r") as f:					#´ò¿ªÎÄ¼þ
+with open(file_one,"r") as f:					#æ‰“å¼€æ–‡ä»¶
 	file=f.read()
-	words_list = re.findall(r"[a-zA-Z]+",file)		#ÌáÈ¡µ¥´Ê
+	words_list = re.findall(r"[a-zA-Z]+",file)		#æå–å•è¯
 	
-words_dict={}									#½¨Á¢Ò»¸ö¿ÕµÄ×Öµä
+words_dict={}									#å»ºç«‹ä¸€ä¸ªç©ºçš„å­—å…¸
 
-for i in words_list:							#Í³¼Æµ¥´ÊµÄÆµÂÊ
-	if words_list.count(i)>0:					#½«µ¥´Ê×÷ÎªKey,³öÏÖÆµÂÊ×÷Îªvalue½¨Á¢Ò»¸ö×Öµä
+for i in words_list:							#ç»Ÿè®¡å•è¯çš„é¢‘çŽ‡
+	if words_list.count(i)>0:					#å°†å•è¯ä½œä¸ºKey,å‡ºçŽ°é¢‘çŽ‡ä½œä¸ºvalueå»ºç«‹ä¸€ä¸ªå­—å…¸
 		words_dict[i] = words_list.count(i)
 		
 words_list_2 = sorted(words_dict.items(),key = lambda x:x[1],reverse = True)
 
-my_file = open(file_path,"a+")
-print >> my_file,""
+file_two = open(file_one,"a+")
+print >> file_two,""
 for word in words_list_2:
-	print >> my_file,word
+	print >> file_two,word
 my_file.close()
