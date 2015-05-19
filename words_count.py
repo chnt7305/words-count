@@ -15,9 +15,9 @@ for i in words_list:							#统计单词的频率
 	if words_list.count(i)>0:					#将单词作为Key,出现频率作为value建立一个字典
 		words_dict[i] = words_list.count(i)
 		
-words_list_2 = sorted(words_dict.items(),key = lambda x:x[1],reverse = True)
+words_list_2 = sorted(words_dict.items(),key = lambda x:x[1],reverse = True)  #将字典按照value值排倒序生成一个列表
 
-file_two = open(file_one,"a+")
+file_two = open(file_one,"a+")   #将列表中的元素逐行写入文件
 print >> file_two,""
 for word in words_list_2:
 	print >> file_two,word
