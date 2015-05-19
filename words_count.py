@@ -21,4 +21,4 @@ file_two = open(file_one,"a+")
 print >> file_two,""
 for word in words_list_2:
 	print >> file_two,word
-my_file.close()
+file_two.close()
